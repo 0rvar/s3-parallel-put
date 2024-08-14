@@ -24,9 +24,9 @@
 # SOFTWARE.
 
 try:
-    from cStringIO import StringIO
+    import StringIO 
 except ImportError:
-    from StringIO import StringIO
+    from io import StringIO
 from fnmatch import fnmatch
 from gzip import GzipFile
 from itertools import chain, imap, islice
