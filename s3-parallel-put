@@ -29,7 +29,7 @@ except ImportError:
     from io import StringIO
 from fnmatch import fnmatch
 from gzip import GzipFile
-from itertools import chain, imap, islice
+from itertools import chain, map, islice
 import logging
 from multiprocessing import JoinableQueue, Process, current_process
 from optparse import OptionGroup, OptionParser
@@ -215,7 +215,7 @@ def walk_s3(source, options):
 
 def walker(walk, put_queue, sources, options):
     logger = logging.getLogger('%s[walker-%d]' % (os.path.basename(sys.argv[0]), current_process().pid))
-    pairs = chain(*imap(lambda source: walk(source, options), sources))
+    pairs = chain(*map(lambda source: walk(source, options), sources))
     if options.resume:
         done = set()
         for filename in options.resume:
