@@ -29,7 +29,7 @@ except ImportError:
     from io import StringIO
 from fnmatch import fnmatch
 from gzip import GzipFile
-from itertools import chain, map, islice
+from itertools import chain, islice
 import logging
 from multiprocessing import JoinableQueue, Process, current_process
 from optparse import OptionGroup, OptionParser
